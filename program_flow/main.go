@@ -1,5 +1,9 @@
 package main
 
+type HTTPRequest struct {
+	Method string
+}
+
 func main() {
 	/*
 		For Loop
@@ -41,4 +45,18 @@ func main() {
 	*/
 	// panic("something bad happend")
 
+	r := HTTPRequest{Method: "GET"}
+
+	switch r.Method {
+	case "GET":
+		println("GET")
+	case "DELETE":
+		println("DELETE")
+	case "POST":
+		println("POST")
+	case "PUT":
+		println("PUT")
+	default:
+		println("Unhandled method")
+	}
 }
